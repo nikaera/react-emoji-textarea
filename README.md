@@ -36,12 +36,12 @@ import ReactEmojiTextArea from "react-emoji-textarea";
 
 ```javascript
 <ReactEmojiTextArea
-  style={{fontSize: "1em"}}
+  style={{ fontSize: "1em" }}
   ref={textAreaEl}
   onChange={(text) => console.log(text)}
   placeholder={"Try typing emoji like a Slack shortcut! 😆💖"}
   emojiPickerProps={{
-    showSkinTones: true
+    showSkinTones: true,
   }}
 />
 ```
@@ -53,30 +53,30 @@ import ReactEmojiTextArea from "react-emoji-textarea";
 ```javascript
 export interface EmojiTextAreaProps {
   ref?: React.RefObject<HTMLTextAreaElement>;
-  showPicker?: boolean;
-  onSuggesting?: (val: boolean) => void;
-  onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
-  onChange: (val: string) => void;
-  placeholder?: string;
   rows?: number;
   cols?: number;
   style?: React.CSSProperties;
+  placeholder?: string;
+  showPicker?: boolean;
   emojiPickerProps?: PickerProps;
+  onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
+  onSuggesting?: (val: boolean) => void;
+  onChange: (val: string) => void;
 }
 ```
 
-| Attribute | Required | Type | Default | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| onChange | ✅ | `function` | `null` | Function used to get the content of the `textarea`. |
-| ref | - | `React.RefObject<HTMLTextAreaElement>` | `null` | Use this when you want to refer to a `textarea` element. |
-| showPicker | - | `boolean` | `false` | Toggle the display of [emoji-mart's Picker](https://github.com/missive/emoji-mart#picker). |
-| onSuggesting | - | `function` | `null` | Function to determine while an emoji input candidate is displayed. |
-| onClick | - | `function` | `null` | Function to determine that a `textarea` field has been clicked. |
-| placeholder | - | `string` | `null` | Specifying a placeholder for a `textarea`. |
-| rows | - | `number` | 3 | Specifying rows for `textarea`. |
-| cols | - | `number` | 40 | Specifying cols for `textarea`. |
-| style | - | `React.CSSProperties` | `null` | Specifying the style of a `textarea`. |
-| emojiPickerProps | - | `PickerProps` | `null` | Specify the `props` for [emoji-mart's Picker](https://github.com/missive/emoji-mart#picker). **[onSelect](https://github.com/nikaera/react-emoji-textarea/blob/main/src/index.tsx#L283) is used in `react-emoji-textarea`.** |
+| Attribute        | Required |                  Type                  | Default | Description                                                                                                                                                                                                                  |
+| :--------------- | :------: | :------------------------------------: | :-----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ref              |    -     | `React.RefObject<HTMLTextAreaElement>` | `null`  | Use this when you want to refer to a `textarea` element.                                                                                                                                                                     |
+| rows             |    -     |                `number`                |    3    | Specifying rows for `textarea`.                                                                                                                                                                                              |
+| cols             |    -     |                `number`                |   40    | Specifying cols for `textarea`.                                                                                                                                                                                              |
+| style            |    -     |         `React.CSSProperties`          | `null`  | Specifying the style of a `textarea`.                                                                                                                                                                                        |
+| placeholder      |    -     |                `string`                | `null`  | Specifying a placeholder for a `textarea`.                                                                                                                                                                                   |
+| showPicker       |    -     |               `boolean`                | `false` | Toggle the display of [emoji-mart's Picker](https://github.com/missive/emoji-mart#picker).                                                                                                                                   |
+| emojiPickerProps |    -     |             `PickerProps`              | `null`  | Specify the `props` for [emoji-mart's Picker](https://github.com/missive/emoji-mart#picker). **[onSelect](https://github.com/nikaera/react-emoji-textarea/blob/main/src/index.tsx#L283) is used in `react-emoji-textarea`.** |
+| onClick          |    -     |               `function`               | `null`  | Function to determine that a `textarea` field has been clicked.                                                                                                                                                              |
+| onSuggesting     |    -     |               `function`               | `null`  | Function to determine while an emoji input candidate is displayed.                                                                                                                                                           |
+| onChange         |    ✅    |               `function`               | `null`  | Function used to get the content of the `textarea`.                                                                                                                                                                          |
 
 ## 🎁 Contributing
 

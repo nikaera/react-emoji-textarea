@@ -33,5 +33,6 @@ module.exports = {
           ":bookmark: chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}",
       },
     ],
+    ["@semantic-release/npm"],
   ],
 };

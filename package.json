@@ -21,7 +21,7 @@
   "author": "nikaera",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && zip -r lib.zip lib/",
     "build:watch": "tsc -w",
     "eslint": "eslint src/**/*.tsx",
     "eslint:fix": "eslint src/**/*.tsx --fix",

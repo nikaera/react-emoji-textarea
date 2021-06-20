@@ -1,5 +1,5 @@
 {
-  "name": "react-emoji-textarea",
+  "name": "@nikaera/react-emoji-textarea",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "files": [

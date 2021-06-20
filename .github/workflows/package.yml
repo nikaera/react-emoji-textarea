@@ -13,7 +13,11 @@ jobs:
           node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
           scope: "@nikaera"
-      - run: yarn
+      - name: Build react-emoji-textarea 😆💖
+        run: |
+          yarn install --frozen-lockfile
+          yarn format
+          yarn build
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

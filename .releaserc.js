@@ -20,7 +20,7 @@ module.exports = {
         assets: [
           {
             path: "react-emoji-textarea.zip",
-            label: "Teemo - Chrome Extension",
+            label: "react-emoji-textarea",
           },
         ],
       },

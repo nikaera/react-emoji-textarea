@@ -15,13 +15,13 @@ You can use **Slack-like emoji shortcuts on textarea!** 🦸‍♂️⌨️
 Install the plugin via Yarn (recommended)
 
 ```bash
-yarn add -D react-emoji-textarea
+yarn add @nikaera/react-emoji-textarea
 ```
 
 or via NPM
 
 ```bash
-npm i -D react-emoji-textarea
+npm i @nikaera/react-emoji-textarea
 ```
 
 ## 🏃 Getting Started

@@ -29,7 +29,7 @@ npm i @nikaera/react-emoji-textarea
 ### Include component
 
 ```javascript
-import ReactEmojiTextArea from "react-emoji-textarea";
+import ReactEmojiTextArea from "@nikaera/react-emoji-textarea";
 ```
 
 ### Make some elegant textarea

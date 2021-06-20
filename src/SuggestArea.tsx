@@ -7,10 +7,9 @@ import styled from "styled-components";
 
 const EmojiInfoDiv = styled.div`
   padding: 0.3em;
-  font-size: 1.1em;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: 0px;
-  height: 2em;
+  height: 2.3em;
 `;
 
 const EmojiColonsP = styled.p`
@@ -42,6 +41,10 @@ const EmojiSpan = styled.span<{ selected: boolean }>`
   font-size: 1.1em;
 
   ${({ selected }) => EmojiSpanSelected(selected)}
+`;
+
+const EmojiSelected = styled.span`
+  font-size: 1.3em;
 `;
 
 const EmojiSuggestLineP = styled.p`
@@ -84,7 +87,7 @@ const SuggestArea: React.FunctionComponent<SuggestAreaProps> = (props) => {
       };
       return (
         <EmojiInfoDiv>
-          <span>{emoji.native}</span>
+          <EmojiSelected>{emoji.native}</EmojiSelected>
           <br />
           <EmojiColonsP>
             {short_names.map((s) => {

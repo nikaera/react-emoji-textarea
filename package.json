@@ -2,6 +2,22 @@
   "name": "react-emoji-textarea",
   "version": "0.0.1",
   "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "emoji",
+    "typescript",
+    "textarea"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikaera/react-emoji-textarea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikaera/react-emoji-textarea/issues"
+  },
   "author": "nikaera",
   "license": "MIT",
   "scripts": {

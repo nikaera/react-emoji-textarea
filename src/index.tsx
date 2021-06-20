@@ -250,6 +250,12 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
     if (props.onClick) {
       props.onClick(e);
     }
+    setState({
+      ...state,
+      editingEmoji: "",
+      suggestions: [],
+      selectedEmojiIndex: 0,
+    });
   };
   const onOverEmojiIndex = (index: number) =>
     setState({ ...state, selectedEmojiIndex: index });

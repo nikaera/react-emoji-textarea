@@ -4,11 +4,11 @@ You can use **Slack-like emoji shortcuts on textarea!** 🦸‍♂️⌨️
 
 [![Image from Gyazo](https://i.gyazo.com/64f104b34c185872b6a864d4bfd6ad21.gif)](https://gyazo.com/64f104b34c185872b6a864d4bfd6ad21)
 
-## 🛠️ Requirement
+## 🔨 Minimum requirements
 
 - [Node.js 14.10.1](https://nodejs.org/)
 - [React 17.0.8](https://ja.reactjs.org/)
-- [Emoji Mart 3.0.4](https://github.com/missive/emoji-mart)
+- [@nikaera/react-emoji-textarea](https://github.com/nikaera/react-emoji-textarea)
 
 ## 💾 Installation
 

@@ -42,7 +42,7 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
   };
 
   const [state, setState] = useState({
-    text: "",
+    text: props.value,
     editingEmoji: "",
     selectedEmojiIndex: 0,
     suggestions: Array<EmojiData>(),
@@ -68,6 +68,13 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
       element.focus();
     }
   }, [props.showPicker]);
+
+  useEffect(() => {
+    setState({
+      ...state,
+      text: props.value
+    })
+  }, [props.value]);
 
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLTextAreaElement>) => {

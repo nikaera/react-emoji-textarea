@@ -123,3 +123,5 @@ lib.zip
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
+# IDE
+.idea/

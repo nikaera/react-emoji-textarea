@@ -72,8 +72,8 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
   useEffect(() => {
     setState({
       ...state,
-      text: props.value
-    })
+      text: props.value,
+    });
   }, [props.value]);
 
   const handleChange = useCallback(
@@ -163,6 +163,7 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
 
   const enterEmoji = (emojiData: EmojiData) => {
     const emoji = (emojiData as BaseEmoji).native;
+    if (!text) return;
     const cursor = text.indexOf(editingEmoji) + emoji.length + 1;
 
     setState({
@@ -235,6 +236,7 @@ const EmojiTextArea: React.ForwardRefRenderFunction<
   const onSelectEmoji = (emoji: EmojiData): void => {
     const element = textAreaElement();
     if (!element) return;
+    if (!text) return;
 
     const before = text.slice(0, element.selectionStart);
     const native = (emoji as BaseEmoji).native;

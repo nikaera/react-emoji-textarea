@@ -20,6 +20,8 @@ import React from "react";
 export interface EmojiTextAreaProps {
   /** Function used to get the content of the textarea. */
   ref?: React.RefObject<HTMLTextAreaElement>;
+  /** Specifying a value for textearea */
+  value?: string;
   /** Specifying rows for textarea. */
   rows?: number;
   /** Specifying cols for textarea. */

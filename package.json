@@ -1,6 +1,6 @@
 {
-  "name": "@nikaera/react-emoji-textarea",
-  "version": "1.0.1",
+  "name": "@lotphy/react-emoji-textarea",
+  "version": "1.1.0",
   "main": "./lib/index.js",
   "files": [
     "lib",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikaera/react-emoji-textarea.git"
+    "url": "https://github.com/lotphy/react-emoji-textarea.git"
   },
   "bugs": {
     "url": "https://github.com/nikaera/react-emoji-textarea/issues"

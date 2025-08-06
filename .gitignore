@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node
-# Edit at https://www.toptal.com/developers/gitignore?templates=node
+# Created by https://www.toptal.com/developers/gitignore/api/node,storybookjs
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,storybookjs
 
 ### Node ###
 # Logs
@@ -58,6 +58,9 @@ web_modules/
 # Optional eslint cache
 .eslintcache
 
+# Optional stylelint cache
+.stylelintcache
+
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
@@ -73,10 +76,12 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variable files
 .env
-.env.test
-.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -88,7 +93,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-lib.zip
+dist
 
 # Gatsby files
 .cache/
@@ -98,6 +103,12 @@ lib.zip
 
 # vuepress build output
 .vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
 
 # Serverless directories
 .serverless/
@@ -121,5 +132,20 @@ lib.zip
 .yarn/install-state.gz
 .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/node
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
 
+# Optional stylelint cache
+
+# SvelteKit build / generate output
+.svelte-kit
+
+### StorybookJs ###
+# gitignore template for the Storybook, UI guide for front apps
+# website: https://storybook.js.org/
+
+storybook-static/
+
+# End of https://www.toptal.com/developers/gitignore/api/node,storybookjs
+*storybook.log

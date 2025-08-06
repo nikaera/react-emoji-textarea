@@ -9,18 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 24
       - name: Build react-emoji-textarea 😆💖
-        run: |
-          yarn install --frozen-lockfile
-          yarn format
-          yarn build
+        run: npm ci && npm run build
       - name: Upload build folder (Chrome Extension)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: lib
           path: lib/

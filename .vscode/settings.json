@@ -1,0 +1,10 @@
+{
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Commit messages should first be written in accordance with Conventional Commits"
+    },
+    {
+      "text": "Then, prefix it with a gitmoji that matches the contents of the commit message"
+    }
+  ]
+}

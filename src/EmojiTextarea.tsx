@@ -42,6 +42,12 @@ export interface EmojiTextAreaProps {
    * Callback when the textarea value changes.
    */
   onChange: (val: string) => void;
+
+  /**
+   * Callback when the emoji picker is clicked outside.
+   * Useful for closing the picker when clicking outside.
+   */
+  onClickOutside?: () => void;
   /**
    * Maximum height for the emoji suggestion area.
    */
@@ -74,6 +80,7 @@ const EmojiTextArea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
       onClick,
       onEmojiPick,
       onChange,
+      onClickOutside,
       suggestMaxHeight = 160,
     },
     ref,
@@ -357,7 +364,11 @@ const EmojiTextArea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
         {/* emoji-mart Picker */}
         {pickerOpen && (
           <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
-            <Picker data={data} onEmojiSelect={handlePickerSelect} />
+            <Picker
+              data={data}
+              onEmojiSelect={handlePickerSelect}
+              onClickOutside={onClickOutside}
+            />
           </div>
         )}
       </div>

@@ -2,21 +2,33 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - main # or main
+
+permissions:
+  contents: read # for checkout
+
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
-      - name: Checkout this repository
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup node
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Install dependencies
+        run: npm clean-install
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
       - name: Build react-emoji-textarea 😆💖
         run: npm ci && npm run build
       - name: Release

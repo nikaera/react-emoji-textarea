@@ -8,13 +8,7 @@ module.exports = {
       },
     ],
     ['@semantic-release/release-notes-generator'],
-    [
-      '@semantic-release/npm',
-      {
-        npmPublish: true,
-        pkgRoot: 'dist',
-      },
-    ],
+    ['@semantic-release/npm'],
     [
       '@semantic-release/github',
       {

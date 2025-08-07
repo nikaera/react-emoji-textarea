@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, ComponentProps } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Picker from '@emoji-mart/react';
 import data, { Emoji } from '@emoji-mart/data';
 
@@ -30,11 +30,6 @@ export interface EmojiTextAreaProps {
    * Whether to show the emoji picker by default.
    */
   showPicker?: boolean;
-  /**
-   * Additional props for the emoji-mart Picker component.
-   * The PickerProps type depends on emoji-mart's type definitions.
-   */
-  emojiPickerProps?: ComponentProps<typeof Picker>;
   /**
    * Callback when the textarea is clicked.
    */
@@ -68,7 +63,7 @@ const getCaretCoordinates = (textarea: HTMLTextAreaElement) => {
   return { top: offsetTop + textarea.offsetHeight, left: offsetLeft };
 };
 
-const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
+const EmojiTextArea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
   (
     {
       rows = 3,
@@ -76,7 +71,6 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
       style,
       placeholder,
       showPicker = false,
-      emojiPickerProps,
       onClick,
       onEmojiPick,
       onChange,
@@ -100,6 +94,13 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
     useEffect(() => {
       setPickerOpen(showPicker);
     }, [showPicker]);
+
+    // pickerOpen が true になったときに textarea に focus を当てる
+    useEffect(() => {
+      if (pickerOpen && textareaRef.current) {
+        textareaRef.current.focus();
+      }
+    }, [pickerOpen]);
 
     /**
      * Handles input and shows suggestions when typing Slack-style :shortcode:.
@@ -187,12 +188,16 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
     /**
      * When an emoji is selected from the emoji picker.
      */
-    const handlePickerSelect = (emoji: Emoji) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handlePickerSelect = (emoji: any) => {
       if (!textareaRef.current) return;
       const cursor = textareaRef.current.selectionStart ?? value.length;
       const before = value.slice(0, cursor);
       const after = value.slice(cursor);
-      const newValue = before + emoji.skins[0].native + after;
+      // emoji-mart v5 以降は emoji.native で取得
+      const emojiChar =
+        emoji.native || (emoji.skins && emoji.skins[0] && emoji.skins[0].native) || '';
+      const newValue = before + emojiChar + after;
       setValue(newValue);
       onChange(newValue);
       if (onEmojiPick) onEmojiPick(emoji);
@@ -200,7 +205,7 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
         if (textareaRef.current) {
           textareaRef.current.focus();
           textareaRef.current.selectionStart = textareaRef.current.selectionEnd =
-            before.length + emoji.skins[0].native.length;
+            before.length + emojiChar.length;
         }
       }, 0);
     };
@@ -352,7 +357,7 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
         {/* emoji-mart Picker */}
         {pickerOpen && (
           <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
-            <Picker data={data} onEmojiSelect={handlePickerSelect} {...emojiPickerProps} />
+            <Picker data={data} onEmojiSelect={handlePickerSelect} />
           </div>
         )}
       </div>
@@ -360,5 +365,5 @@ const EmojiTextarea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
   },
 );
 
-EmojiTextarea.displayName = 'EmojiTextarea';
-export default EmojiTextarea;
+EmojiTextArea.displayName = 'EmojiTextArea';
+export default EmojiTextArea;

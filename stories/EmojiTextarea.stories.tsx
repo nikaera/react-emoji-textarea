@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import EmojiTextarea from '../src/EmojiTextarea';
+import EmojiTextarea from '../src/EmojiTextArea';
 
 const meta = {
   title: 'Components/EmojiTextarea',
@@ -27,7 +27,6 @@ export const Default: Story = {
 export const WithPicker: Story = {
   args: {
     placeholder: ':heart: :star: :fire:',
-    emojiPickerProps: { showSkinTones: true },
     onChange: () => {},
   },
   render: (args) => {
@@ -54,7 +53,6 @@ export const PickerAlwaysOpen: Story = {
   args: {
     placeholder: 'Picker always open!',
     showPicker: true,
-    emojiPickerProps: { showSkinTones: true },
     onChange: () => {},
   },
   render: (args) => {

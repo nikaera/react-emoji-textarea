@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "A modern React textarea component with emoji support.",
   "main": "./lib/index.js",
-  "module": "./lib/index.esm.js",
+  "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
   "files": [
     "lib",
@@ -11,7 +11,7 @@
   ],
   "exports": {
     ".": {
-      "import": "./lib/index.esm.js",
+      "import": "./lib/index.mjs",
       "require": "./lib/index.js",
       "types": "./lib/index.d.ts"
     }

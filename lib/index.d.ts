@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
+import Picker from '@emoji-mart/react';
+import { Emoji } from '@emoji-mart/data';
 
 /**
  * Props for the EmojiTextarea component.
@@ -32,7 +34,7 @@ interface EmojiTextAreaProps {
    * Additional props for the emoji-mart Picker component.
    * The PickerProps type depends on emoji-mart's type definitions.
    */
-  emojiPickerProps?: any;
+  emojiPickerProps?: ComponentProps<typeof Picker>;
   /**
    * Callback when the textarea is clicked.
    */
@@ -40,7 +42,7 @@ interface EmojiTextAreaProps {
   /**
    * Callback when an emoji is selected from the picker.
    */
-  onEmojiPick?: (emoji: any) => void;
+  onEmojiPick?: (emoji: Emoji) => void;
   /**
    * Callback when the textarea value changes.
    */
@@ -50,5 +52,8 @@ interface EmojiTextAreaProps {
    */
   suggestMaxHeight?: number;
 }
+declare const EmojiTextArea: React.ForwardRefExoticComponent<
+  Omit<EmojiTextAreaProps, 'ref'> & React.RefAttributes<HTMLTextAreaElement>
+>;
 
-export type { EmojiTextAreaProps };
+export { type EmojiTextAreaProps, EmojiTextArea as EmojiTextarea };

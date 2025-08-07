@@ -1,7 +1,7 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import EmojiTextarea from '../src/EmojiTextarea';
+import EmojiTextarea from '../src/EmojiTextArea';
 
 describe('EmojiTextarea', () => {
   it('renders without crashing', () => {

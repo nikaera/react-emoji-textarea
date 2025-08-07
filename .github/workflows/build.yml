@@ -20,5 +20,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lib
-          path: lib/
+          path: dist/
           retention-days: 7

@@ -6,7 +6,7 @@ import EmojiTextArea from '../src/EmojiTextArea';
 describe('EmojiTextArea', () => {
   it('renders without crashing', () => {
     const { getByPlaceholderText } = render(
-      <EmojiTextArea placeholder="test" onChange={() => {}} />, 
+      <EmojiTextArea placeholder="test" onChange={() => {}} />,
     );
     expect(getByPlaceholderText('test')).toBeInTheDocument();
   });
@@ -14,7 +14,7 @@ describe('EmojiTextArea', () => {
   it('calls onChange when typing', () => {
     const handleChange = vi.fn();
     const { getByPlaceholderText } = render(
-      <EmojiTextArea placeholder="test" onChange={handleChange} />, 
+      <EmojiTextArea placeholder="test" onChange={handleChange} />,
     );
     const textarea = getByPlaceholderText('test') as HTMLTextAreaElement;
     fireEvent.change(textarea, { target: { value: 'hello' } });
@@ -24,7 +24,7 @@ describe('EmojiTextArea', () => {
   it('shows emoji suggest when typing :smile:', async () => {
     const handleChange = vi.fn();
     const { getByPlaceholderText } = render(
-      <EmojiTextArea placeholder=":smile:" onChange={handleChange} />, 
+      <EmojiTextArea placeholder=":smile:" onChange={handleChange} />,
     );
     const textarea = getByPlaceholderText(':smile:') as HTMLTextAreaElement;
     fireEvent.change(textarea, { target: { value: 'hello :smil' } });

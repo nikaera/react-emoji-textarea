@@ -25,12 +25,5 @@ module.exports = {
         ],
       },
     ],
-    [
-      '@semantic-release/git',
-      {
-        message:
-          ':bookmark: chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}',
-      },
-    ],
   ],
 };

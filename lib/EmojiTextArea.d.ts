@@ -1,10 +1,9 @@
 import React from 'react';
 import { Emoji } from '@emoji-mart/data';
-
 /**
  * Props for the EmojiTextarea component.
  */
-interface EmojiTextAreaProps {
+export interface EmojiTextAreaProps {
     /**
      * Ref for the textarea element.
      */
@@ -52,5 +51,4 @@ interface EmojiTextAreaProps {
     suggestMaxHeight?: number;
 }
 declare const EmojiTextArea: React.ForwardRefExoticComponent<Omit<EmojiTextAreaProps, "ref"> & React.RefAttributes<HTMLTextAreaElement>>;
-
-export { type EmojiTextAreaProps, EmojiTextArea as EmojiTextarea };
+export default EmojiTextArea;

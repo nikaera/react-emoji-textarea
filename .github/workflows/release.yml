@@ -19,5 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mv lib.zip react-emoji-textarea.zip
+          zip -r dist.zip ./dist
+          mv dist.zip react-emoji-textarea.zip
           npx semantic-release

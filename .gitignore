@@ -92,6 +92,7 @@ web_modules/
 out
 
 # Nuxt.js build / generate output
+dist
 .nuxt
 
 # Gatsby files

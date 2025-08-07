@@ -1,12 +1,12 @@
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import EmojiTextarea from '../src/EmojiTextArea';
+import EmojiTextArea from '../src/EmojiTextArea';
 
-describe('EmojiTextarea', () => {
+describe('EmojiTextArea', () => {
   it('renders without crashing', () => {
     const { getByPlaceholderText } = render(
-      <EmojiTextarea placeholder="test" onChange={() => {}} />,
+      <EmojiTextArea placeholder="test" onChange={() => {}} />, 
     );
     expect(getByPlaceholderText('test')).toBeInTheDocument();
   });
@@ -14,7 +14,7 @@ describe('EmojiTextarea', () => {
   it('calls onChange when typing', () => {
     const handleChange = vi.fn();
     const { getByPlaceholderText } = render(
-      <EmojiTextarea placeholder="test" onChange={handleChange} />,
+      <EmojiTextArea placeholder="test" onChange={handleChange} />, 
     );
     const textarea = getByPlaceholderText('test') as HTMLTextAreaElement;
     fireEvent.change(textarea, { target: { value: 'hello' } });
@@ -24,7 +24,7 @@ describe('EmojiTextarea', () => {
   it('shows emoji suggest when typing :smile:', async () => {
     const handleChange = vi.fn();
     const { getByPlaceholderText } = render(
-      <EmojiTextarea placeholder=":smile:" onChange={handleChange} />,
+      <EmojiTextArea placeholder=":smile:" onChange={handleChange} />, 
     );
     const textarea = getByPlaceholderText(':smile:') as HTMLTextAreaElement;
     fireEvent.change(textarea, { target: { value: 'hello :smil' } });

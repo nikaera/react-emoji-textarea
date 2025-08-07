@@ -3,7 +3,7 @@ import Picker from '@emoji-mart/react';
 import data, { Emoji } from '@emoji-mart/data';
 
 /**
- * Props for the EmojiTextarea component.
+ * Props for the EmojiTextArea component.
  */
 export interface EmojiTextAreaProps {
   /**

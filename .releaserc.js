@@ -7,9 +7,7 @@ module.exports = {
         releaseRules: [{ type: 'build', release: 'patch' }],
       },
     ],
-    [
-      '@semantic-release/release-notes-generator'
-    ],
+    ['@semantic-release/release-notes-generator'],
     [
       '@semantic-release/npm',
       {

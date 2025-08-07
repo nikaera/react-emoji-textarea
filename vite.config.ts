@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'ReactEmojiTextarea',
+      name: 'ReactEmojiTextArea',
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {

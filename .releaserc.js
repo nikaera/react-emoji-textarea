@@ -1,36 +1,35 @@
 module.exports = {
-  branches: ["main"],
+  branches: ['main'],
   plugins: [
     [
-      "@semantic-release/commit-analyzer",
+      '@semantic-release/commit-analyzer',
       {
-        config: "conventional-changelog-gitmoji-config",
-        releaseRules: [{ type: "build", release: "patch" }],
+        config: 'conventional-changelog-gitmoji-config',
+        releaseRules: [{ type: 'build', release: 'patch' }],
       },
     ],
     [
-      "@semantic-release/release-notes-generator",
+      '@semantic-release/release-notes-generator',
       {
-        config: "conventional-changelog-gitmoji-config",
+        config: 'conventional-changelog-gitmoji-config',
       },
     ],
     [
-      "@semantic-release/github",
+      '@semantic-release/github',
       {
         assets: [
           {
-            path: "react-emoji-textarea.zip",
-            label: "react-emoji-textarea",
+            path: 'react-emoji-textarea.zip',
+            label: 'react-emoji-textarea',
           },
         ],
       },
     ],
     [
-      "@semantic-release/git",
+      '@semantic-release/git',
       {
         message:
-          // eslint-disable-next-line no-template-curly-in-string
-          ":bookmark: chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}",
+          ':bookmark: chore(release): ${nextRelease.gitTag} [skip ci] \n\n${nextRelease.notes}',
       },
     ],
   ],

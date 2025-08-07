@@ -29,17 +29,17 @@ npm i @nikaera/react-emoji-textarea
 ### Include component
 
 ```javascript
-import ReactEmojiTextArea from "@nikaera/react-emoji-textarea";
+import ReactEmojiTextArea from '@nikaera/react-emoji-textarea';
 ```
 
 ### Make some elegant textarea
 
 ```javascript
 <ReactEmojiTextArea
-  style={{ fontSize: "1em" }}
+  style={{ fontSize: '1em' }}
   ref={textAreaEl}
   onChange={(text) => console.log(text)}
-  placeholder={"Try typing emoji like a Slack shortcut! 😆💖"}
+  placeholder={'Try typing emoji like a Slack shortcut! 😆💖'}
   emojiPickerProps={{
     showSkinTones: true,
   }}

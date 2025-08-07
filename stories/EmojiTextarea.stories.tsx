@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import EmojiTextarea from '../src/EmojiTextarea';
@@ -18,10 +17,8 @@ export const Default: Story = {
   render: (args) => {
     return (
       <>
-      <EmojiTextarea
-        {...args}
-      />
-      <p>Something Text</p>
+        <EmojiTextarea {...args} />
+        <p>Something Text</p>
       </>
     );
   },
@@ -37,13 +34,16 @@ export const WithPicker: Story = {
     const [showPicker, setShowPicker] = useState(false);
     return (
       <>
-        <button onClick={() => setShowPicker(v => !v)}>
+        <button onClick={() => setShowPicker((v) => !v)}>
           {showPicker ? 'Close Picker' : 'Open Picker'}
         </button>
         <EmojiTextarea
           {...args}
           showPicker={showPicker}
-          onEmojiPick={(e) => { console.log(e); setShowPicker(v => !v); }}
+          onEmojiPick={(e) => {
+            console.log(e);
+            setShowPicker((v) => !v);
+          }}
         />
       </>
     );
@@ -58,10 +58,6 @@ export const PickerAlwaysOpen: Story = {
     onChange: () => {},
   },
   render: (args) => {
-    return (
-      <EmojiTextarea
-        {...args}
-      />
-    );
+    return <EmojiTextarea {...args} />;
   },
 };

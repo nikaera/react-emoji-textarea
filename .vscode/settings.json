@@ -1,5 +1,5 @@
 {
-    "github.copilot.chat.commitMessageGeneration.instructions": [
+  "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Commit messages should first be written in accordance with Conventional Commits"
     },

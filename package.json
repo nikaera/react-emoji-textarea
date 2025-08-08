@@ -1,6 +1,6 @@
 {
   "name": "@nikaera/react-emoji-textarea",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A modern React textarea component with emoji support.",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",

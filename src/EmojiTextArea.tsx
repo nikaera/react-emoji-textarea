@@ -42,7 +42,6 @@ export interface EmojiTextAreaProps {
    * Callback when the textarea value changes.
    */
   onChange: (val: string) => void;
-
   /**
    * Callback when the emoji picker is clicked outside.
    * Useful for closing the picker when clicking outside.
@@ -52,6 +51,10 @@ export interface EmojiTextAreaProps {
    * Maximum height for the emoji suggestion area.
    */
   suggestMaxHeight?: number;
+  /**
+   * Whether the textarea should automatically receive focus on mount.
+   */
+  autoFocus?: boolean;
 }
 
 /**
@@ -82,6 +85,7 @@ const EmojiTextArea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
       onChange,
       onClickOutside,
       suggestMaxHeight = 160,
+      autoFocus = true, // Whether to focus the textarea when the picker opens
     },
     ref,
   ) => {
@@ -368,6 +372,7 @@ const EmojiTextArea = React.forwardRef<HTMLTextAreaElement, EmojiTextAreaProps>(
               data={data}
               onEmojiSelect={handlePickerSelect}
               onClickOutside={onClickOutside}
+              autoFocus={autoFocus}
             />
           </div>
         )}

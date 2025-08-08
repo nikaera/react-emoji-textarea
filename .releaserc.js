@@ -5,12 +5,6 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     [
-      '@semantic-release/git',
-      {
-        assets: ['CHANGELOG.md', 'package.json', 'package-lock.json'],
-      },
-    ],
-    [
       '@semantic-release/github',
       {
         assets: [

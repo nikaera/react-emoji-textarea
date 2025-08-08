@@ -1,14 +1,15 @@
 module.exports = {
   branches: ['main'],
   plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/npm',
     [
-      '@semantic-release/commit-analyzer',
+      '@semantic-release/git',
       {
-        releaseRules: [{ type: 'build', release: 'patch' }],
+        assets: ['CHANGELOG.md', 'package.json', 'package-lock.json'],
       },
     ],
-    ['@semantic-release/release-notes-generator'],
-    ['@semantic-release/npm'],
     [
       '@semantic-release/github',
       {

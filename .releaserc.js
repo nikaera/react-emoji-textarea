@@ -4,6 +4,7 @@ module.exports = {
     [
       '@semantic-release/commit-analyzer',
       {
+        config: 'conventional-changelog-gitmoji-config',
         releaseRules: [
           { type: 'feat', release: 'minor' },
           { type: 'fix', release: 'patch' },
@@ -13,7 +14,12 @@ module.exports = {
         ],
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        config: 'conventional-changelog-gitmoji-config',
+      },
+    ],
     '@semantic-release/npm',
     [
       '@semantic-release/github',

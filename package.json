@@ -24,7 +24,8 @@
     "fix": "prettier --write . && eslint . --ext .ts,.tsx --fix",
     "preview": "storybook dev -p 6006",
     "preview:build": "storybook build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run typecheck"
   },
   "keywords": [
     "react",
